@@ -93,24 +93,18 @@ public class LibraryManager{
         System.out.print("Which book to check out? ");
         int index;
 
-        try{
-            index= scanner.nextInt();
-            scanner.nextLine();
-        } catch (java.util.InputMismatchException e){
-            System.out.println("Invalid input. Please enter a valid index.");
-            return;
-        }
+        
         System.out.print("Who are you? ");
         String patronName = scanner.nextLine();
 
         try {
             library.checkOut(index, patronName);
-            System.out.println("Book checked out successfully.");
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("Invalid publication index. Please select a valid index.");
-        }
+            System.out.println(library);
 
-        System.out.println(library);
+            
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Invalid publication index");
+        }
 
         
     }
