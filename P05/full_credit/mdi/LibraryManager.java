@@ -37,6 +37,8 @@ public class LibraryManager{
         //scanner.nextLine();
         while( true){
             menu();
+            System.out.println("\n\n");
+            System.out.print("Selection: ");
             int choice =  scanner.nextInt();
             switch(choice) {
                 case 0:
@@ -125,6 +127,7 @@ public class LibraryManager{
 
             System.out.print("Who are you? ");
             String patronName = scanner.nextLine();
+            
             //scanner.close();
                 try {
                     library.checkOut(index, patronName);
@@ -142,6 +145,7 @@ public class LibraryManager{
             System.out.print("Which book to check in? ");
             int index = scanner.nextInt();
             scanner.nextLine();
+            
 
             
             //scanner.close();

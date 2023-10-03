@@ -70,7 +70,7 @@ public class Publication{
             stringInfo.append(", ").append(mid);
         }
         if(loanedTo != null){
-            stringInfo.append("\n    :").append(" loaned to").append(loanedTo).append(" until ").append(dueDate);
+            stringInfo.append("\n    :").append(" loaned to ").append(loanedTo).append(" until ").append(dueDate);
         }
 
         stringInfo.append("\n");
