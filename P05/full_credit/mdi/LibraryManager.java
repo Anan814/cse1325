@@ -6,6 +6,7 @@
 package mdi;
 import java.util.Scanner;
 import library.Publication;
+import library.Publication.InvalidCheckInException;
 import library.Video;
 import library.Video.InvalidRuntimeException;
 import library.Library;
@@ -70,7 +71,7 @@ public class LibraryManager{
         static void menu(){
             System.out.println("=========\nMain Menu\n=========");
             System.out.println("UTA Central Library");
-            System.out.println("0)Exit\n1)List\n2)Add Publication\n2)Add Video\n4)Check out\n5)Check in");
+            System.out.println("0)Exit\n1)List\n2)Add Publication\n3)Add Video\n4)Check out\n5)Check in");
         }
 
         static void list(Library library){
@@ -78,6 +79,7 @@ public class LibraryManager{
         }
 
         static void addPublication(Library library, Scanner scanner){
+            scanner.nextLine();
             System.out.print("Enter the title of the Publication: ");
             String title = scanner.nextLine();
             System.out.print("Enter the author of the Publication: ");
@@ -150,6 +152,8 @@ public class LibraryManager{
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("Invalid publication index");
                 } catch (InvalidRuntimeException e){
+                System.out.println(e.getMessage());
+                } catch (InvalidCheckInException e){
                 System.out.println(e.getMessage());    
             }
             

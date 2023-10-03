@@ -20,6 +20,11 @@ public class Publication{
      * @param copyright     The copyright of the publication
      */
 
+     public class InvalidCheckInException extends RuntimeException {
+        public InvalidCheckInException(String message) {
+            super(message);
+        }
+    }
     public Publication(String title, String author, int copyright){
         int currentYear = LocalDate.now().getYear();
         if (copyright < 1900 || copyright > currentYear)
@@ -43,6 +48,9 @@ public class Publication{
     }
 
     public void checkIn(){
+        if ( loanedTo == null || dueDate == null){
+            throw new InvalidCheckInException("Publication index not checked out");
+        }
         loanedTo = null;
         dueDate = null;
     }    
