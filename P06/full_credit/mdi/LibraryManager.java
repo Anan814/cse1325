@@ -40,34 +40,7 @@ public class LibraryManager{
         
         Scanner scanner = new Scanner (System.in);
 
-        /*static void saveLibrary(Library library, Scanner scanner){
-            scanner.nextLine();
-            System.out.println("Enter filename to save: ");
-            String fileName = scanner.nextLine();
-            
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))){
-                library.save(bw);
-            } catch (IOException e){
-                System.err.println("Failed to save: " + e); System.exit(-1);
-            }
-
-               
-            }
-
-        static Library openLibrary(Library library, Scanner scanner){
-            scanner.nextLine();
-            System.out.println("Enter filename to open: ");
-            String fileName = scanner.nextLine();
-
-            try (BufferedReader br = new BufferedReader(new FileReader(fileName))){
-                library = new Library(br);
-                return library;
-            } catch (IOException e){
-                System.err.println("Failed to open: " + e); System.exit(-1);
-            }
-            return null;
-
-        }*/
+        
         
 
         
@@ -208,14 +181,14 @@ public class LibraryManager{
 
         static void saveLibrary(Library library, Scanner scanner){
             scanner.nextLine();
-            System.out.println("Enter filename to save: ");
+            System.out.println("Enter filename to save to: ");
             String fileName = scanner.nextLine();
             
             
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))){
                 library.save(bw);
             } catch (IOException e){
-                System.err.println("Failed to save: " + e); System.exit(-1);
+                System.err.println("Failed to save file: " + e); System.exit(-1);
             }
 
                
@@ -231,7 +204,7 @@ public class LibraryManager{
                 library = new Library(br);
                 return library;
             } catch (IOException e){
-                System.err.println("Failed to open: " + e); System.exit(-1);
+                System.err.println("Failed to open file: " + e); System.exit(-1);
             }
             return null;
 
