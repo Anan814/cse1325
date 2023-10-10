@@ -1,0 +1,37 @@
+UTA Central Library
+6
+publication
+Da Vinci Code
+Dan Brown
+2003
+checked in
+publication
+The Godfather
+Mario Puzo
+1969
+checked in
+publication
+All The Light We Cannot See
+Anthony Doerr
+2014
+checked in
+video
+Interstellar
+Christopher Nolan
+2014
+checked in
+169
+video
+Oppenheimer
+Christopher Nolan
+2023
+checked out
+Anan
+2023-10-23
+180
+video
+The Godfather Part II
+Francis Ford Coppola
+1974
+checked in
+202
