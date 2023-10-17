@@ -93,28 +93,6 @@ public class WordSearch {
     }
 
 
-    /*public void solveWithThreads() {
-        List<Thread> threads = new ArrayList<>();
-        
-        for (int i = 0; i < NUM_THREADS; ++i) {
-            final int threadID = i;
-            final int firstPuzzle = i * (NUM_PUZZLES / NUM_THREADS);
-            final int lastPuzzlePlusOne = (i + 1) * (NUM_PUZZLES / NUM_THREADS);
-            
-            Thread thread = new Thread(() -> solve(threadID, firstPuzzle, lastPuzzlePlusOne));
-            thread.start();
-            threads.add(thread);
-        }
-
-        for (Thread thread : threads) {
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                System.err.println("Thread interrupted: " + e.getMessage());
-            }
-        }
-    }*/
-
     public void solve(int threadID, int firstPuzzle, int lastPuzzlePlusOne) {
         System.err.println("Thread " + threadID + ": " + firstPuzzle + "-" + (lastPuzzlePlusOne-1));
         for(int i=firstPuzzle; i<lastPuzzlePlusOne; ++i) {
