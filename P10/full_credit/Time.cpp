@@ -6,9 +6,21 @@ Time::Time(int hour, int minute, int second) : _hour(hour), _minute(minute), _se
 }
 
 void Time::rationalize() {
-    _hour = (_hour + (_minute + _second / 60) / 60) % 24;
-    _minute = (_minute + _second / 60) % 60;
+    
+    _minute += _second / 60;
     _second %= 60;
+    _hour = (_hour + _minute / 60) % 24;
+    _minute %= 60;
+
+    
+    if (_minute < 0) {
+        _minute += 60;
+        _hour = (_hour - 1 + 24) % 24;
+    }
+    if (_second < 0) {
+        _second += 60;
+        _minute = (_minute - 1 + 60) % 60;
+    }
 }
 
 Time Time::operator+(const Time& time) const {
