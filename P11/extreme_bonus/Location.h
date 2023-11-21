@@ -15,13 +15,14 @@ public:
     bool operator<=(const Location& rhs) const;
     bool operator>=(const Location& rhs) const;
 
-    int compare(const Location& rhs) const;
+    //int compare(const Location& rhs) const;
 
     friend std::ostream& operator<<(std::ostream& os, const Location& location);
 
 private:
     std::string _filename;
     int _line;
+    int compare(const Location& rhs) const;
     
     static std::string last_filename;
     
