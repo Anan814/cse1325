@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
             std::string word;
 
             while (iss >> word) {
-                // Remove punctuation
+                
                 while (!word.empty() && !std::isalnum(word.front())) {
                     word.erase(0, 1);
                 }
@@ -36,12 +36,12 @@ int main(int argc, char* argv[]) {
                     word.pop_back();
                 }
 
-                // Convert to lowercase
+                
                 for (char& c : word) {
                     c = std::tolower(c);
                 }
 
-                // Add word to index
+                
                 index.add_word(argv[i], line_number, word);
             }
 
