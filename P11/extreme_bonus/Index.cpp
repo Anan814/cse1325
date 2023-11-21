@@ -9,14 +9,14 @@ std::ostream& operator<<(std::ostream& os, const Index& index) {
         os << it->first << ": ";
         auto range = index._index.equal_range(it->first);
 
-        // Print the locations for the current word
+        
         for (auto loc_it = range.first; loc_it != range.second; ++loc_it) {
             os << loc_it->second << ", ";
         }
 
         os << '\n';
 
-        // Skip past duplicates
+        
         it = range.second;
     }
     return os;
