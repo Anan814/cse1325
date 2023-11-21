@@ -8,7 +8,7 @@ void Index::add_word(const std::string& filename, int line, const Index::Word& w
 
 std::ostream& operator<<(std::ostream& os, const Index& index) {
     for (const auto& entry : index._index) {
-        Location::next_word(); // Reset last_filename for each new word
+        Location::next_word(); 
         os << entry.first << ": ";
         for (const auto& location : entry.second) {
             os << location << ", ";
